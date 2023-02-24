@@ -1,4 +1,4 @@
-package vn.amisoft.application.security.Impl;
+package vn.amisoft.application.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;

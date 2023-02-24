@@ -38,10 +38,14 @@ public class UserEntity extends BaseEntity<User> {
     @Column(name = "created_by")
     private Integer createdBy;
 
-
     @OneToMany(mappedBy = "userEntity")
     private List<JsonWebTokenEntity> jsonWebTokenEntities;
 
+    public UserEntity() {
+    }
+    public UserEntity(User user) {
+        ofModel(user);
+    }
     @Override
     public User toModel() {
         User user = new User();

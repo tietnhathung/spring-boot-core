@@ -47,6 +47,13 @@ public class AuthServiceImpl implements AuthService,AuthenticationManager{
     }
 
     @Override
+    public void logout(String FullToken) {
+        String jwt = jsonWebTokenService.parseJwt(FullToken);
+        JsonWebToken jsonWebToken = jsonWebTokenService.findAndValidateJwtToken(jwt);
+        jsonWebTokenService.remove(jsonWebToken);
+    }
+
+    @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UserDetails userDetail = userDetailsService.loadUserByUsername(authentication.getName());
         if (!encoder.matches(authentication.getCredentials().toString(), userDetail.getPassword())) {

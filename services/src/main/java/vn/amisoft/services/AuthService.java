@@ -8,4 +8,6 @@ public interface AuthService {
     JsonWebToken login(LoginRequest loginRequest);
 
     JsonWebToken refresh(String refreshToken) throws AuthenticationException;
+
+    void logout(String auth);
 }

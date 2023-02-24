@@ -32,19 +32,23 @@ public class JsonWebTokenEntity extends BaseEntity<JsonWebToken>{
     @Column(name = "created_at",columnDefinition = "datetime")
     private LocalDateTime createdAt;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
-    public static JsonWebTokenEntity of(JsonWebToken jsonWebToken) {
-        JsonWebTokenEntity jwt = new JsonWebTokenEntity();
-        jwt.ofModel(jsonWebToken);
-        return jwt;
+
+    public JsonWebTokenEntity(JsonWebToken jsonWebToken) {
+        ofModel(jsonWebToken);
+    }
+
+    public JsonWebTokenEntity() {
+
     }
 
     @Override
     public JsonWebToken toModel() {
         JsonWebToken jwt = new JsonWebToken();
+        jwt.setId(id);
         jwt.setType(type);
         jwt.setAccessToken(accessToken);
         jwt.setRefreshToken(refreshToken);
@@ -54,6 +58,7 @@ public class JsonWebTokenEntity extends BaseEntity<JsonWebToken>{
 
     @Override
     public void ofModel(JsonWebToken jsonWebToken) {
+        id = jsonWebToken.getId();
         type = jsonWebToken.getType();
         accessToken = jsonWebToken.getAccessToken();
         refreshToken = jsonWebToken.getRefreshToken();

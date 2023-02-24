@@ -15,7 +15,7 @@ public interface JsonWebTokenService {
     JsonWebToken create(Authentication authentication);
 
     void remove(JsonWebToken jwt);
-
+    String parseJwt(String fullToken);
     JsonWebToken findAndValidateJwtToken(String refreshToken);
 
     JsonWebToken findAndValidateRefreshToken(String refreshToken);

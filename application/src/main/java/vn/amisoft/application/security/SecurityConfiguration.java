@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import vn.amisoft.application.security.Impl.AuthenticationEntryPointJwt;
 import vn.amisoft.services.JsonWebTokenService;
 import vn.amisoft.services.UserService;
 import vn.amisoft.services.impl.AuthServiceImpl;
@@ -38,7 +37,6 @@ public class SecurityConfiguration {
         this.jsonWebTokenService = jsonWebTokenService;
         this.userService = userService;
     }
-
 
     @Bean
     public PasswordEncoder encoder() {

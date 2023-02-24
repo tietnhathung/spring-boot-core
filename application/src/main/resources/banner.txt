@@ -8,6 +8,6 @@ ${AnsiColor.BLUE}
          '--'   '--'   '--'   '--'   '--'   '--'   '--'
 ${AnsiColor.DEFAULT}
  ===============================================================
-    ${AnsiColor.BRIGHT_CYAN}::Api core::${AnsiColor.DEFAULT}                                        1.0.0
+    ${AnsiColor.BRIGHT_CYAN}::Spring boot core::${AnsiColor.DEFAULT}                                1.0.0
     Powered by Spring Boot                              ${spring-boot.version}
  ===============================================================

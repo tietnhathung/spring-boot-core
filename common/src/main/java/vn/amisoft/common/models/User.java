@@ -1,5 +1,6 @@
 package vn.amisoft.common.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,6 +15,7 @@ public class User extends BaseModel{
 
     private String fullName;
 
+    @JsonIgnore
     private String password;
 
     private Boolean status;
