@@ -1,0 +1,7 @@
+rootProject.name = 'sping-boot-core'
+
+include 'common'
+include 'application'
+include 'services'
+include 'dao'
+
