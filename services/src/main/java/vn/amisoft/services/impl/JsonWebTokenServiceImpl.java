@@ -124,7 +124,7 @@ public class JsonWebTokenServiceImpl implements JsonWebTokenService {
     @Override
     public JsonWebToken findAndValidateJwtToken(String token) {
         if (validateJwtToken(token)){
-            Optional<JsonWebTokenEntity> jsonWebTokenEntity =  jsonWebTokenRepository.findByAccessToken(token);
+            Optional<JsonWebTokenEntity> jsonWebTokenEntity =  jsonWebTokenRepository.findFirstByAccessToken(token);
             if (jsonWebTokenEntity.isPresent()){
                 return jsonWebTokenEntity.get().toModel();
             }
@@ -135,7 +135,7 @@ public class JsonWebTokenServiceImpl implements JsonWebTokenService {
     @Override
     public JsonWebToken findAndValidateRefreshToken(String refreshToken) {
         if (validateJwtToken(refreshToken)){
-            Optional<JsonWebTokenEntity> jsonWebTokenEntity =  jsonWebTokenRepository.findByRefreshToken(refreshToken);
+            Optional<JsonWebTokenEntity> jsonWebTokenEntity =  jsonWebTokenRepository.findFirstByRefreshToken(refreshToken);
             if (jsonWebTokenEntity.isPresent()){
                 return jsonWebTokenEntity.get().toModel();
             }

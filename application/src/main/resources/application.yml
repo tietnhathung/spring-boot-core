@@ -1,11 +1,11 @@
 spring:
   datasource:
-#    url: jdbc:mysql://192.168.31.222:3306/spring-boot-core
-#    username: hungnq
-#    password: hungnq1122
-    url: jdbc:mysql://localhost:3306/spring-boot-core
-    username: root
-    password:
+    url: jdbc:mysql://192.168.31.222:3306/spring-boot-core
+    username: hungnq
+    password: hungnq1122
+#    url: jdbc:mysql://localhost:3306/spring-boot-core
+#    username: root
+#    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     open-in-view: false
